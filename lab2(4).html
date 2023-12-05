@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab2(4)</title>
+    <style>
+        .traffic-light {
+            width: 100px;
+            height: 300px;
+            background-color: #333;
+            border-radius: 10px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .light {
+            width: 80px;
+            height: 80px;
+            background-color: #777;
+            border-radius: 50%;
+            margin: 10px auto;
+            transition: background-color 0.3s;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Світлофор</h1>
+
+    <div class="traffic-light">
+        <div class="light" id="red"></div>
+        <div class="light" id="yellow"></div>
+        <div class="light" id="green"></div>
+    </div>
+
+    <button id="changeLight">Змінити колір</button>
+
+    <script>
+        var lights = ['red', 'yellow', 'green'];
+        var currentLight = 0;
+
+        var changeLightButton = document.getElementById("changeLight");
+
+        // Функція для встановлення початкового кольору
+        function setInitialColor() {
+            for (var i = 0; i < lights.length; i++) {
+                document.getElementById(lights[i]).style.backgroundColor = '#777';
+            }
+            document.getElementById(lights[currentLight]).style.backgroundColor = lights[currentLight];
+        }
+
+        setInitialColor();
+
+        changeLightButton.addEventListener("click", function() {
+            document.getElementById(lights[currentLight]).style.backgroundColor = '#777';
+            currentLight = (currentLight + 1) % lights.length;
+            document.getElementById(lights[currentLight]).style.backgroundColor = lights[currentLight];
+        });
+    </script>
+</body>
+</html>

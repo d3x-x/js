@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab2(3)</title>
+</head>
+<body>
+    <h1>Управління лампочкою</h1>
+
+    <button id="onButton">Увімкнути лампочку</button>
+    <button id="offButton">Вимкнути лампочку</button>
+
+    <img id="lamp" src="lamp_off.png" alt="Лампочка вимкнена">
+
+    <script>
+        var lamp = document.getElementById("lamp");
+        var onButton = document.getElementById("onButton");
+        var offButton = document.getElementById("offButton");
+
+        onButton.addEventListener("click", function() {
+            lamp.src = "images/lamp_on.png";
+        });
+
+        offButton.addEventListener("click", function() {
+            lamp.src = "images/lamp_off.png";
+        });
+    </script>
+</body>
+</html>
