@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab1_Dziuba_344ck</title>
+</head>
+<body>
+    <h1>Заголовок</h1>
+    <p>звичайний текст.</p>
+    <button id="deleteButton" onclick="deleteH1()">Видалити заголовок</button>
+    <button id="restoreButton" onclick="restoreH1()">Востановити заголовок</button>
+    <script>
+        const initialH1 = document.querySelector('h1');
+        const initialHtml = initialH1.outerHTML;
+        function deleteH1() {
+            const h1 = document.querySelector('h1');
+            h1.parentNode.removeChild(h1);
+        }
+        function restoreH1() {
+            document.body.innerHTML = initialHtml + document.body.innerHTML;
+        }
+    </script>
+</body>
+</htmlck>
